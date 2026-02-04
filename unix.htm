@@ -1,0 +1,357 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/unix.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Unix</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div align="center"> 
+  <table width="602" height="465" border="0" align="center" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="611" height="108" valign="top"><img src="subimage/unix.jpg" width="602" height="110"></td>
+    </tr>
+    <tr> 
+      <td height="233" valign="top"><!-- InstanceBeginEditable name="content" --> 
+        <p align="center"><a name="b"></a><a href="#chmod">chmod</a> | <a href="#cd">cd</a> 
+          | <a href="#cat">cat&amp;vi</a> | <a href="#mkdir">mkdir</a> | <a href="#print">print 
+          </a>|<a href="#setenv"> setenv</a> | <a href="#move">move </a>| <a href="#cp">copy 
+          </a>| <a href="#ls">list </a>|<a href="#rm"> remove </a>|<a href="#search"> 
+          search </a>| <a href="#tail">tail </a>| <a href="#wc">wc</a> | t<a href="#tar">ar</a> 
+          | <a href="#append">append</a> | <a href="#redirect">redirect </a>| 
+          <a href="#pipeline">pipeline </a>| <a href="#spell">spell </a>| <a href="#env">envarible</a> 
+          | <a href="#du">du</a> | <a href="#regexp">reg exp</a> <a href="#troff">| 
+          troff </a>| <a href="#cron">crontab</a> | <a href="#IO">IO</a> | <a href="#ca">Command 
+          Arg</a>| <a href="#wa"> |Wildcard</a>| <a href="#backup">AutoBackup</a> 
+          | <a href="#e">Expr</a></p>
+        <p align="center"><a href="http://www.aota.net/Telnet/commands.php4" target="_blank"><strong>Command 
+          Unix Command Reference</strong></a></p>
+        <p><strong>Switching Mode</strong></p>
+        <p>1.From command to input , type [ a, i, o ] to get into input mode<br>
+          2.Hit Esc to get into Command mode, type [:wq , :w, :x] to exit and 
+          save<br>
+          3. In command mode, x=del one word ,dd=delete line.</p>
+        <div align="center"> 
+          <table width="99%" border="0" cellspacing="0" cellpadding="0">
+            <tr> 
+              <td><p><strong>General information</strong><br>
+                  cmd&gt; Finger soonlim //print out info about user soonlim<br>
+                  cmd&gt; Date //print date<br>
+                  cmd&gt; Who // who is currently log in to this system<br>
+                  cmd&gt; cat /proc/cpuinfo // view cpu info<br>
+                  cmd&gt; cat /proc/meminfo //view memory info<br>
+                  cmd&gt; hostname // name of hosting machine<br>
+                  cmd&gt; ifconfig // ip info</p>
+                <table width="62%" border="0" cellspacing="0" cellpadding="0">
+                  <tr> 
+                    <td width="36%"><div align="left"><font color="#0000FF"><strong>SH</strong></font></div></td>
+                    <td width="64%"><div align="left"><strong>.Profile ( login.com, 
+                        home dir)</strong></div></td>
+                  </tr>
+                  <tr> 
+                    <td><div align="left"><font color="#0000FF"><strong>BASH</strong></font></div></td>
+                    <td><div align="left"><strong>.bashrc</strong></div></td>
+                  </tr>
+                  <tr> 
+                    <td><div align="left"><font color="#0000FF"><strong>CSH</strong></font></div></td>
+                    <td><div align="left"><strong>.cshrc</strong></div></td>
+                  </tr>
+                  <tr> 
+                    <td><div align="left"><font color="#0000FF"><strong>TCSH</strong></font></div></td>
+                    <td><div align="left"><strong>.tcshrc</strong></div></td>
+                  </tr>
+                </table>
+                <p>-user info is in /etc/passwd </p>
+                <p></p>
+                <p>&nbsp; </p>
+                <p align="center"><a href="#b">Back</a></p></td>
+            </tr>
+            <tr> 
+              <td><strong><a name="chmod"></a>Change mode </strong> <p>chmod 135 
+                  filename //user, group, other ,rwx<br>
+                </p>
+                <table width="45%" border="0" cellspacing="0" cellpadding="0">
+                  <tr> 
+                    <td width="32%"><div align="center"><strong>User</strong></div></td>
+                    <td width="36%"><div align="center"><strong>Group</strong></div></td>
+                    <td width="32%"><div align="center"><strong>Other</strong></div></td>
+                  </tr>
+                  <tr> 
+                    <td><div align="center"><strong><font color="#0000CC">RW-</font></strong></div></td>
+                    <td><div align="center"><strong><font color="#0000CC">R--</font></strong></div></td>
+                    <td><div align="center"><strong><font color="#0000CC">---</font></strong></div></td>
+                  </tr>
+                  <tr> 
+                    <td><div align="center"><font color="#006600"><strong>6</strong></font></div></td>
+                    <td><div align="center"><font color="#006600"><strong>4</strong></font></div></td>
+                    <td><div align="center"><font color="#006600"><strong>0</strong></font></div></td>
+                  </tr>
+                </table>
+                <p>&nbsp;</p></td>
+            </tr>
+            <tr> 
+              <td><p><strong><a name="cd"></a>Change Directory</strong><br>
+                  cmd&gt; cd .. //back one step<br>
+                  cmd&gt; <strong>cd / </strong>//back to top of tree<br>
+                  cmd&gt; cd ~ = cd //back to home directory<br>
+                  cmd&gt; cd dir_name // move to directory</p>
+                <p><br>
+                </p></td>
+            </tr>
+            <tr> 
+              <td><p><strong><a name="cat"></a>Cat&amp; Vi</strong><br>
+                  cmd&gt; Cat file // view<br>
+                  cmd&gt; vi file // edit<br>
+                  cmd&gt; Setup emacs,<br>
+                  emacs file</p>
+                <p align="center"><a href="#b">Back</a></p></td>
+            </tr>
+            <tr> 
+              <td><p><strong><a name="mkdir"></a>Making Directory</strong><br>
+                  cmd&gt; mkdir dir_name</p></td>
+            </tr>
+            <tr> 
+              <td><p><br>
+                  <strong><a name="print"></a>Printing</strong><br>
+                  cmd&gt; Print filename printer<br>
+                  cmd&gt; Setenv Printer Jwb231 //set default printer Jwb231</p>
+                <p><br>
+                </p></td>
+            </tr>
+            <tr> 
+              <td><p><strong><a name="setenv"></a>SetEnv</strong><br>
+                  1. pwd //show current position<br>
+                  2. echo <strong>$PATH </strong>// show path<br>
+                  3. echo <strong>$SHEL</strong>L //view shell<br>
+                  4. echo<strong> $PRINTER</strong> //view default printer<br>
+                  ECHO // print the value of variable, $ preceded variable as 
+                  argument to echo</p>
+                <p>&nbsp;</p></td>
+            </tr>
+            <tr> 
+              <td><strong><a name="ls"></a>Listing</strong><br>
+                cmd&gt; ls -aq //list out all file starting with . or /<br>
+                cmd&gt; ls -R //* listing all directory and its inside file<br>
+                cmd&gt; ls -L // listing all file infomation<br></td>
+            </tr>
+            <tr> 
+              <td><p><strong><a name="cp"></a>Copy</strong><br>
+                  cmd&gt; cp oldfile newfile // copy content of oldfile to newfile</p>
+                <p align="center"><a href="#b">Back</a></p></td>
+            </tr>
+            <tr> 
+              <td><p><strong><a name="move"></a>Move</strong><br>
+                  cmd&gt; mv odlfilename newfilename //<br>
+                  cmd&gt; mv directory1 directory2 // Move A cmd&gt; &gt;B</p>
+                <p>&nbsp;</p></td>
+            </tr>
+            <tr> 
+              <td><p><strong><a name="rm"></a>Remove</strong><br>
+                  cmd&gt; rm filename //detele file<br>
+                  cmd&gt; rmdir dir_name </p></td>
+            </tr>
+            <tr> 
+              <td><p><strong><a name="search"></a>Search</strong><br>
+                  cmd&gt; less filename.txt /keyword <br>
+                  cmd&gt; grep keyword filename.txt<br>
+                  cmd&gt; grep -i keyword filename.txt // ignore upper&amp;lower 
+                  case</p>
+                <p>&nbsp;</p></td>
+            </tr>
+            <tr> 
+              <td><p><strong><a name="tail"></a>Head | Tail</strong><br>
+                  cmd&gt; head filename // display first 10 lines (default) of 
+                  file<br>
+                  cmd&gt; head -n 20 filename // first 20 lines<br>
+                  cmd&gt; Tail <strong>-n</strong> 20 index.php //print last 20 
+                  , def is 10<br>
+                  cmd&gt; Tail<strong> +</strong>20 index.php //display 10 lines 
+                  starting from line 20th<br>
+                  cmd&gt; tail --help </p>
+                <p></p>
+                <p align="center"><a href="#b">Back</a><br>
+                </p></td>
+            </tr>
+            <tr> 
+              <td><p><strong><a name="wc"></a>Word Count</strong><br>
+                  cmd&gt; wc -w filename.txt // count # of word in file<br>
+                  cmd&gt; wc -l filename.txt // count # of line in file</p>
+                <p><br>
+                </p></td>
+            </tr>
+            <tr> 
+              <td><p><strong><a name="tar"></a>Tar</strong><br>
+                  cmd&gt; tar tvzf foo.tar.gz // extract directories and files 
+                  from compressed archive<br>
+                  cmd&gt; tar xvzf foo.tar.gz // extracts the files NOT directories</p>
+                <p>create tar file<br>
+                  tar -cvvf file.tar *.* /var/www/*.php // create tar file ( collection 
+                  into single file uncompressed)<br>
+                  tar -cvvf file.tar.gz // compressed single file</p>
+                <p>Extracting from tar file<br>
+                  tar -xvvf myfile.tar</p>
+                <p>&nbsp;</p></td>
+            </tr>
+            <tr> 
+              <td><p><strong><a name="du"></a>Du (Disk Usage)</strong><br>
+                  cmd&gt; du //display disk usage of current directory <br>
+                  cmd&gt; du -s //display only total disk usage <br>
+                  cmd&gt; du -s -k // some versions of Unix need cmd&gt; k to 
+                  report kilobytes</p>
+                <p align="center"><a href="#b">Back</a></p></td>
+            </tr>
+            <tr> 
+              <td><strong><a name="redirect"></a>Redirection</strong><br>
+                cmd&gt; cat &gt; list1 // type in banana, apple, will go to list1 
+                file 
+                <p><strong><a name="append"></a>Append</strong><br>
+                  cmd&gt; cat list1 list2 &gt;&gt; list3 // catatenate content 
+                  list1, list2 append to list3</p>
+                <p>&nbsp;</p></td>
+            </tr>
+            <tr> 
+              <td><p><strong><a name="env"></a>Environment Variable</strong><br>
+                  1. <font color="#FF0000"><strong>env </strong></font>// listing 
+                  current environment variable<br>
+                  home=?<br>
+                  pwd=?<br>
+                  shell=?<br>
+                  mail=?<br>
+                  logname=?<br>
+                  term=?</p>
+                <p>&nbsp;</p></td>
+            </tr>
+            <tr> 
+              <td><p><strong><a name="regexp"></a>REGULAR EXPRESSION</strong><br>
+                  1: . //any character<br>
+                  2: * //as many char as possiblev /xx.*y/<br>
+                  3: ^ //begining of the line<br>
+                  4: $ // end of the line<br>
+                  5: /[fT]red/ // looking for fred or Fred<br>
+                  /[0cmd&gt; 9]/ // all character range 0 to 9</p>
+                <p>&nbsp;</p></td>
+            </tr>
+            <tr> 
+              <td><p><strong><a name="pipeline"></a>Pipeline</strong><br>
+                  1. who | grep Sue // pipeline [|] , who's output as input of 
+                  grep, look for Sue<br>
+                  2. who | wc -l // how many line is printed<br>
+                  3. ls | more<br>
+                  4. grep 'hi there' file //find file containing 'hi there' </p>
+                <p align="center"><a href="#b">Back</a></p></td>
+            </tr>
+            <tr> 
+              <td><p><strong><a name="spell"></a>Spell</strong><br>
+                  1. spell filename // print out the words not in dictionary<br>
+                  2. spell filaname &gt; error // those error words will be sent 
+                  to error<br>
+                  3. spell filaname &gt;&gt; error // append those wrong spell 
+                  word to error<br>
+                  4. spell &lt; file1 &gt; file2 // check spell in file1 and put 
+                  in file2</p>
+                <p>&nbsp;</p></td>
+            </tr>
+            <tr> 
+              <td><p><strong><a name="troff"></a>Troff</strong><br>
+                  1. $ troff big_file &amp; // formating big file at back ground, 
+                  can run<br>
+                  another command , no wait<br>
+                  2. $ $ troff big_file &gt; output &amp;</p>
+                <p align="center"><a href="#b">Back</a></p></td>
+            </tr>
+            <tr> 
+              <td><strong><a name="cron"></a>Crontab</strong> ( schedule job to 
+                execute at specific date/time)<br>
+                1. crontab cron.txt // install filename as crontab file<br>
+                2. crontab -l //display content of crontab file<br>
+                3. crontab -r //remove crontab file <p><strong>Disabled email 
+                  </strong><br>
+                  1. put &quot; &gt;/dev/null <font color="#990000"><strong>2&gt;&amp;1</strong></font>&quot; 
+                  at the end of command</p>
+                <p>eg.<br>
+                  <font color="#0000FF"><strong>MAILTO</strong></font>=user@domain.com<br>
+                  30 23 * * * /home/username/www/cgi-bin/members.cgi &gt;/dev/null 
+                  2&gt;&amp;1 </p>
+                <p>[min , hour , day/month , month , day/week]</p>
+                <p>Generate logfile<br>
+                  eg<br>
+                  30 18 * * * rm /home/someuser/tmp/* &gt; /home/cronlogs/file.log</p>
+                <p>&nbsp;</p>
+                <p align="center"><a href="#b">Back</a><br>
+                </p></td>
+            </tr>
+            <tr> 
+              <td> <p><br>
+                  <br>
+                  <strong><a name="backup"></a>MySqlAutoBackup</strong><br>
+                  1. Create backup.sh <br>
+                  -<a href="mysqlbak.txt" target="_blank">mysqlbak.sh</a><br>
+                  -<a href="web.txt" target="_blank">web.sh</a></p>
+                <p>2. place this file into cron job using following<br>
+                  - <strong><font color="#990066">create cronjob.sh </font></strong><br>
+                  - place following line into<strong> cronjob.sh </strong><br>
+                  30 2 * * 0-6 /mysqlbak/web.sh<br>
+                  30 23 * * 0-6 /mysqlbak/mysqlbak.sh<br>
+                  - <font color="#0000FF"><strong>crontab cronjob.sh</strong></font> 
+                  //install file as cronjob file<br>
+                  - <font color="#006600"><strong>Crontab -l </strong></font>/ 
+                  /check if it is installed<br>
+                </p>
+                <p align="center"><a href="#b">Back</a></p></td>
+            </tr>
+            <tr> 
+              <td><strong><a name="IO"></a>Redirection</strong><br>
+                1. ls -l &gt; myfile.txt // output to myfile.txt<br>
+                2. date &gt;&gt; myfile.txt // append to the end of myfile.txt<br>
+                3. cat &lt; myfile // take input from myfile <p>stdin =0 keyboard<br>
+                  stdout=1 screen<br>
+                  stderr=2 standard error<br>
+                  $ rm bad_file_name111 2&gt;er.txt // forward error msg to er.txt<br>
+                  standard output (stdout) to standard error (stderr) device.<br>
+                  eg 1 &gt;&amp;2</p>
+                <p align="center"><a href="#b">Back</a></p></td>
+            </tr>
+            <tr> 
+              <td><p><strong><a name="ca"></a>Command args</strong><br>
+                  $# = number of args<br>
+                  $0 = script filename<br>
+                  $1 = 1st arg<br>
+                  $2 = 2nd arg<br>
+                  $* = all arguements </p>
+                <p align="center"><a href="#b">Back</a></p></td>
+            </tr>
+            <tr> 
+              <td><strong><a name="wa"></a>Wildcard</strong><br>
+                ? =1 char<br>
+                [A-E] = range<br>
+                [ABC] =match one of those</td>
+            </tr>
+            <tr>
+              <td><br>
+                <strong><a name="e"></a>Expr</strong><br>
+                1. expr 3 + 4 <br>
+                2. expr 4 - 2<br>
+                3. expr 4 \* 6 <br>
+                4. expr 8 / 2<br>
+                5. expr = , \&gt;= ,\&lt;= , !=<br> </td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </div>
+        <p>&nbsp;</p>
+        <!-- InstanceEndEditable --></td>
+    </tr>
+    <tr> 
+      <td height="19" valign="middle" nowrap bgcolor="#0099CC"><div align="center">@Copy 
+          right of Soon Lim 2006. All Right Reserved</div></td>
+    </tr>
+  </table>
+</div>
+</body>
+<!-- InstanceEnd --></html>
