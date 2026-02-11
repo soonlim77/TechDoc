@@ -1,0 +1,23 @@
+name: Push Success Logger
+
+on:
+  push:
+    branches:
+      - main   # change branch if needed
+
+jobs:
+  log-success:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Log success message
+        run: |
+          echo "==============================="
+          echo "✅FIRST GITHUB ACTION,  SUCCESS PUSHED"
+          echo "Time: $(date)"
+          echo "Commit: ${{ github.sha }}"
+          echo "User: ${{ github.actor }}"
+          echo "==============================="
