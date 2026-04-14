@@ -21,3 +21,36 @@ jobs:
           echo "Commit: ${{ github.sha }}"
           echo "User: ${{ github.actor }}"
           echo "==============================="
+
+           # 1. Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # IMPORTANT for full history & diff
+
+      # 2. Show commit info
+      - name: Show commit details
+        run: |
+          echo "Commit SHA: ${{ github.sha }}"
+          echo "Author: ${{ github.actor }}"
+          echo "Message:"
+          git log -1 --pretty=%B
+
+      # 3. Show changed files
+      - name: List changed files
+        run: |
+          echo "Changed files:"
+          git diff --name-status ${{ github.event.before }} ${{ github.sha }}
+
+      # 4. Show actual code diff
+      - name: Show code diff
+        run: |
+          echo "Code changes:"
+          git diff ${{ github.event.before }} ${{ github.sha }}
+
+      # 5. (Optional) Show full repo structure
+      - name: Show directory structure
+        run: |
+          echo "Project structure:"
+          ls -R
+        
